@@ -22,16 +22,16 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: windows-latest
-            option: portable
-          - os: windows-latest
-          - os: ubuntu-latest
-          - os: macos-latest
+          # - os: windows-latest
+          #   option: portable
+          # - os: windows-latest
+          # - os: ubuntu-latest
+          # - os: macos-latest
           - os: macos-latest
             target: aarch64-apple-darwin
 
     runs-on: ${{ matrix.os }}
-    if: startsWith(github.repository, 'MetaCubeX')
+    # if: startsWith(github.repository, 'MetaCubeX')
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
