@@ -27,6 +27,8 @@ jobs:
           - os: windows-latest
           - os: ubuntu-latest
           - os: macos-latest
+          - os: macos-latest
+            target: aarch64-apple-darwin
 
     runs-on: ${{ matrix.os }}
     if: startsWith(github.repository, 'MetaCubeX')
