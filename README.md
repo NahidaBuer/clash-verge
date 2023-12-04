@@ -38,6 +38,23 @@ Notes: If you could not start the app on Windows, please check that you have [We
 
 open the terminal and run `sudo xattr -r -d com.apple.quarantine /Applications/Clash\ Verge.app`
 
+#### 2. **macOS** `Tun Mode` not work
+
+change core permissions:
+```shell
+sudo chown root:admin /Applications/Clash\ Verge.app/Contents/MacOS/mihomo
+sudo chmod +sx /Applications/Clash\ Verge.app/Contents/MacOS/mihomo
+```
+
+due to the core cannot redirect dns automatically, you may need to manually set dns server with:
+
+```shell
+# set to Tun Mode built-in dns
+networksetup -setdnsservers Wi-Fi 198.18.0.2
+# restore to default dhcp dns
+networksetup -setdnsservers Wi-Fi "Empty"
+```
+
 ## Development
 
 You should install Rust and Nodejs, see [here](https://tauri.app/v1/guides/getting-started/prerequisites) for more details. Then install Nodejs packages.
